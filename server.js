@@ -37,3 +37,11 @@ mongoose
     res.status(200).json("File has been uploaded");
   });
   
+
+app.use("/api/auth", authRoute);
+app.use("/api/users", userRoute);
+app.use("/api/posts", postRoute);
+app.use("/api/categories", categoryRoute);
+
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`listening on PORT ${PORT}`));
