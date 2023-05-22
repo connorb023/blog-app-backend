@@ -17,8 +17,7 @@ mongoose
   .connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
-    useCreateIndex: true,
-    useFindAndModify:true
+  
   })
   .then(console.log("Connected to MongoDB"))
   .catch((err) => console.log(err));
@@ -43,5 +42,5 @@ app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/categories", categoryRoute);
 
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 9000;
 app.listen(PORT, () => console.log(`listening on PORT ${PORT}`));
